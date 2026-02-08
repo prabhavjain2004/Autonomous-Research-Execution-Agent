@@ -160,16 +160,16 @@ def main():
         epilog="""
 Examples:
   # Start web server
-  python main.py server
+  python run.py server
   
   # Start server on custom port
-  python main.py server --port 3000
+  python run.py server --port 3000
   
   # Run CLI research
-  python main.py cli "Research the latest trends in artificial intelligence"
+  python run.py cli "Research the latest trends in artificial intelligence"
   
   # Run CLI research with custom session ID
-  python main.py cli "Research quantum computing" --session-id my-session-123
+  python run.py cli "Research quantum computing" --session-id my-session-123
         """
     )
     

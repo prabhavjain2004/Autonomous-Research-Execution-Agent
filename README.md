@@ -123,8 +123,8 @@ playwright install
 copy .env.example .env
 # Edit .env and add your OPENROUTER_API_KEY
 
-# 5. Run the web server
-python main.py server
+# 5. Run the application
+python run.py server
 
 # 6. Open browser to http://localhost:8000
 ```
@@ -253,7 +253,7 @@ See `.env.example` for complete list of configuration options.
 Start the web server for interactive research with real-time monitoring:
 
 ```bash
-python main.py server
+python run.py server
 ```
 
 Then open your browser to `http://localhost:8000`
@@ -267,7 +267,7 @@ Then open your browser to `http://localhost:8000`
 
 **Custom host/port:**
 ```bash
-python main.py server --host 0.0.0.0 --port 3000
+python run.py server --host 0.0.0.0 --port 3000
 ```
 
 ### CLI Mode
@@ -275,12 +275,12 @@ python main.py server --host 0.0.0.0 --port 3000
 Run research directly from command line:
 
 ```bash
-python main.py cli "Research the latest trends in artificial intelligence"
+python run.py cli "Research the latest trends in artificial intelligence"
 ```
 
 **With custom session ID:**
 ```bash
-python main.py cli "Research quantum computing" --session-id my-session-123
+python run.py cli "Research quantum computing" --session-id my-session-123
 ```
 
 **Example output:**
@@ -332,32 +332,48 @@ pytest tests/integration/
 
 ```
 autonomous-research-agent/
-├── agents/                 # Specialized AI agents
-│   ├── base_agent.py      # Base agent class
-│   ├── research_agent.py  # Web research specialist
-│   ├── analyst_agent.py   # Data analysis specialist
-│   ├── strategy_agent.py  # Strategy generation specialist
-│   └── README.md          # Agent documentation
-├── agent_loop/            # State machine and execution control
-│   ├── state_machine.py   # State transitions and timeouts
-│   └── README.md          # State machine documentation
-├── evaluation/            # Confidence scoring and reflection
-│   ├── reflection.py      # Confidence evaluation logic
-│   └── README.md          # Evaluation documentation
-├── memory/                # Session persistence
-│   ├── memory_system.py   # SQLite database interface
-│   └── README.md          # Memory system documentation
-├── models/                # Data models and schemas
-│   ├── data_models.py     # Pydantic models
-│   └── README.md          # Data models documentation
-├── boss_agent.py          # Boss agent orchestrator
-├── model_router.py        # OpenRouter model selection
-├── config.py              # Configuration management
-├── error_handling.py      # Error handling utilities
-├── main.py                # Application entry point
+├── src/                    # Core application logic
+│   ├── agents/            # Specialized AI agents
+│   │   ├── base_agent.py      # Base agent class
+│   │   ├── research_agent.py  # Web research specialist
+│   │   ├── analyst_agent.py   # Data analysis specialist
+│   │   └── strategy_agent.py  # Strategy generation specialist
+│   ├── agent_loop/        # State machine and execution control
+│   │   └── state_machine.py   # State transitions and timeouts
+│   ├── evaluation/        # Confidence scoring and reflection
+│   │   └── reflection.py      # Confidence evaluation logic
+│   ├── memory/            # Session persistence
+│   │   └── memory_system.py   # SQLite database interface
+│   ├── models/            # Data models and schemas
+│   │   └── data_models.py     # Pydantic models
+│   ├── tools/             # Search, scraper, writer tools
+│   ├── ui/                # Web server, CSS, JS
+│   ├── planner/           # Planning logic
+│   ├── structured_logging/ # Logging system
+│   ├── boss_agent.py      # Boss agent orchestrator
+│   ├── model_router.py    # OpenRouter model selection
+│   ├── config.py          # Configuration management
+│   ├── error_handling.py  # Error handling utilities
+│   ├── main.py            # Application entry point
+│   └── __init__.py        # Package initialization
+├── tests/                 # All test files
+│   ├── test_models.py     # Model tests
+│   ├── test_system.py     # System integration tests
+│   └── validate_setup.py  # Setup validation
+├── docs/                  # Project documentation
+│   ├── QUICK_START.md     # Quick start guide
+│   ├── DEPLOYMENT_GUIDE.md # Deployment instructions
+│   ├── CONTRIBUTING.md    # Contribution guidelines
+│   └── README.md          # Documentation index
+├── data/                  # Database files (gitignored)
+├── logs/                  # Log files (gitignored)
+├── outputs/               # Generated outputs (gitignored)
+├── run.py                 # Application launcher
 ├── requirements.txt       # Python dependencies
+├── pytest.ini             # Pytest configuration
 ├── .env.example           # Environment template
 ├── .gitignore             # Git ignore rules
+├── LICENSE                # MIT License
 └── README.md              # This file
 ```
 
@@ -432,14 +448,14 @@ All data is persisted to SQLite:
 
 ### Adding New Agents
 
-1. Create new agent class in `agents/` directory
+1. Create new agent class in `src/agents/` directory
 2. Inherit from `BaseAgent`
 3. Implement `execute()` method
 4. Add confidence calculation logic
 5. Register with Boss Agent
 6. Add tests
 
-See `agents/README.md` for detailed guide.
+See agent documentation in `src/agents/` for detailed guide.
 
 ## 🤝 Contributing
 
@@ -484,9 +500,9 @@ Under the condition of including the license and copyright notice.
 Need help? Here's how to get support:
 
 ### Documentation
-- [Quick Start Guide](QUICK_START.md) - Get started in 5 minutes
-- [Contributing Guide](CONTRIBUTING.md) - How to contribute
-- [Module READMEs](agents/README.md) - Detailed component documentation
+- [Quick Start Guide](docs/QUICK_START.md) - Get started in 5 minutes
+- [Contributing Guide](docs/CONTRIBUTING.md) - How to contribute
+- [Documentation Index](docs/README.md) - All documentation
 
 ### Community
 - **Issues**: [Report bugs or request features](https://github.com/prabhavjain2004/Autonomous-Research-Execution-Agent/issues)
