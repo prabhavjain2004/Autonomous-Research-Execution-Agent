@@ -107,8 +107,8 @@ Get up and running in 5 minutes:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/autonomous-research-agent.git
-cd autonomous-research-agent
+git clone https://github.com/prabhavjain2004/Autonomous-Research-Execution-Agent.git
+cd Autonomous-Research-Execution-Agent
 
 # 2. Create virtual environment
 python -m venv venv
@@ -141,8 +141,8 @@ python main.py server
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/autonomous-research-agent.git
-cd autonomous-research-agent
+git clone https://github.com/prabhavjain2004/Autonomous-Research-Execution-Agent.git
+cd Autonomous-Research-Execution-Agent
 ```
 
 #### 2. Create Virtual Environment
@@ -489,9 +489,9 @@ Need help? Here's how to get support:
 - [Module READMEs](agents/README.md) - Detailed component documentation
 
 ### Community
-- **Issues**: [Report bugs or request features](https://github.com/yourusername/autonomous-research-agent/issues)
-- **Discussions**: [Ask questions and share ideas](https://github.com/yourusername/autonomous-research-agent/discussions)
-- **Pull Requests**: [Contribute code](https://github.com/yourusername/autonomous-research-agent/pulls)
+- **Issues**: [Report bugs or request features](https://github.com/prabhavjain2004/Autonomous-Research-Execution-Agent/issues)
+- **Discussions**: [Ask questions and share ideas](https://github.com/prabhavjain2004/Autonomous-Research-Execution-Agent/discussions)
+- **Pull Requests**: [Contribute code](https://github.com/prabhavjain2004/Autonomous-Research-Execution-Agent/pulls)
 
 ### Common Questions
 

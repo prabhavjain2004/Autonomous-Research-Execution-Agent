@@ -388,9 +388,8 @@ Reviewers will check:
 
 ## 📞 Getting Help
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/autonomous-research-agent/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/autonomous-research-agent/discussions)
-- **Email**: your.email@example.com
+- **Issues**: [GitHub Issues](https://github.com/prabhavjain2004/Autonomous-Research-Execution-Agent/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/prabhavjain2004/Autonomous-Research-Execution-Agent/discussions)
 
 ## 📄 License
 
