@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Environment Variables
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.kiro/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Logs
+logs/
+*.log
+
+# Database
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Outputs
+outputs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright
+.playwright/
+
+# Documentation (excluding main README files)
+BOSS_LLM_EVALUATION.md
+BUG_FIX_CONFIDENCE_SCORES.md
+COMPLETION_SUMMARY.md
+DEPLOYMENT_GUIDE.md
+FINAL_FIX_SUMMARY.md
+FINAL_TEST_SUMMARY.md
+FIXES_APPLIED.md
+ISSUE_14_FIXED.md
+LLM_INTEGRATION_COMPLETE.md
+MODELS_UPDATED.md
+OPENROUTER_TROUBLESHOOTING.md
+PROJECT_SETUP.md
+
+# Temporary files
+nul

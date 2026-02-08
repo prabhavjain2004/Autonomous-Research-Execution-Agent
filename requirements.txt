@@ -1,0 +1,30 @@
+# Core Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+websockets==12.0
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3
+hypothesis==6.98.0
+
+# Web Search and Scraping
+duckduckgo-search==4.1.1
+googlesearch-python==1.2.3
+beautifulsoup4==4.12.3
+requests==2.31.0
+trafilatura==1.6.3
+newspaper3k==0.2.8
+playwright==1.41.0
+
+# LLM Integration (OpenRouter)
+openai==1.10.0
+
+# Data Processing
+python-dotenv==1.0.0
+
+# Database
+# SQLite is included in Python standard library
+
+# Utilities
+aiofiles==23.2.1

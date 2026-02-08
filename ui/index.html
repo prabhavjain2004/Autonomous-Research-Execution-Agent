@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Research Agent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🤖 Autonomous Research Agent</h1>
+            <p class="subtitle">Multi-Agent Research System with Real-Time Monitoring</p>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-indicator disconnected"></span>
+                <span class="status-text">Disconnected</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="section input-section">
+                <h2>Research Goal</h2>
+                <div class="input-group">
+                    <textarea 
+                        id="researchGoal" 
+                        placeholder="Enter your research goal here... (e.g., 'Research the latest trends in artificial intelligence')"
+                        rows="3"
+                    ></textarea>
+                    <button id="startButton" class="btn btn-primary">
+                        <span class="btn-icon">🚀</span>
+                        Start Research
+                    </button>
+                </div>
+            </section>
+
+            <!-- Status Section -->
+            <section class="section status-section">
+                <h2>Current Status</h2>
+                <div class="status-grid">
+                    <div class="status-card">
+                        <div class="status-label">State</div>
+                        <div class="status-value" id="currentState">IDLE</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-label">Active Agent</div>
+                        <div class="status-value" id="activeAgent">-</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-label">Current Action</div>
+                        <div class="status-value" id="currentAction">-</div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-label">Session ID</div>
+                        <div class="status-value session-id" id="sessionId">-</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Confidence Scores Section -->
+            <section class="section confidence-section">
+                <h2>Confidence Scores</h2>
+                <div id="confidenceScores" class="confidence-grid">
+                    <div class="confidence-card">
+                        <div class="confidence-header">Research Agent</div>
+                        <div class="confidence-bar-container">
+                            <div class="confidence-bar" id="confidenceResearch" style="width: 0%"></div>
+                        </div>
+                        <div class="confidence-value" id="confidenceResearchValue">-</div>
+                    </div>
+                    <div class="confidence-card">
+                        <div class="confidence-header">Analyst Agent</div>
+                        <div class="confidence-bar-container">
+                            <div class="confidence-bar" id="confidenceAnalyst" style="width: 0%"></div>
+                        </div>
+                        <div class="confidence-value" id="confidenceAnalystValue">-</div>
+                    </div>
+                    <div class="confidence-card">
+                        <div class="confidence-header">Strategy Agent</div>
+                        <div class="confidence-bar-container">
+                            <div class="confidence-bar" id="confidenceStrategy" style="width: 0%"></div>
+                        </div>
+                        <div class="confidence-value" id="confidenceStrategyValue">-</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logs Section -->
+            <section class="section logs-section">
+                <div class="section-header">
+                    <h2>Live Logs</h2>
+                    <div class="log-controls">
+                        <select id="logLevelFilter" class="log-filter">
+                            <option value="all">All Levels</option>
+                            <option value="DEBUG">Debug</option>
+                            <option value="INFO">Info</option>
+                            <option value="WARNING">Warning</option>
+                            <option value="ERROR">Error</option>
+                        </select>
+                        <button id="clearLogsButton" class="btn btn-secondary btn-sm">Clear Logs</button>
+                    </div>
+                </div>
+                <div id="logsContainer" class="logs-container"></div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="section results-section" id="resultsSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Research Results</h2>
+                    <div class="export-controls">
+                        <button id="exportJsonButton" class="btn btn-secondary btn-sm">
+                            <span class="btn-icon">📄</span> Export JSON
+                        </button>
+                        <button id="exportMarkdownButton" class="btn btn-secondary btn-sm">
+                            <span class="btn-icon">📝</span> Export Markdown
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="results-tabs">
+                    <button class="tab-button active" data-tab="formatted">Formatted View</button>
+                    <button class="tab-button" data-tab="json">JSON View</button>
+                </div>
+
+                <div class="tab-content active" id="formattedView">
+                    <div id="formattedResults"></div>
+                </div>
+
+                <div class="tab-content" id="jsonView">
+                    <pre id="jsonResults"></pre>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="section history-section">
+                <div class="section-header">
+                    <h2>Session History</h2>
+                    <button id="refreshHistoryButton" class="btn btn-secondary btn-sm">
+                        <span class="btn-icon">🔄</span> Refresh
+                    </button>
+                </div>
+                <div id="historyContainer" class="history-container">
+                    <p class="empty-state">No previous sessions</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Autonomous Research Agent v1.0.0 | Built with FastAPI & WebSockets</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
