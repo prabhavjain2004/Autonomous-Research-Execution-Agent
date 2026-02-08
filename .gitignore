@@ -64,7 +64,7 @@ sessions/
 # Outputs
 outputs/
 
-
+docs/
 
 # OS
 .DS_Store
